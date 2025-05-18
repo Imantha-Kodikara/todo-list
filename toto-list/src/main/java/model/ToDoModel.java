@@ -14,4 +14,5 @@ import java.util.Date;
 public class ToDoModel {
     private String taskDescription;
     private LocalDate date;
+    private String time;
 }

@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="491.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToDoController">
+<AnchorPane prefHeight="491.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToDoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#355638" height="491.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="295.0" />
       <Label layoutX="40.0" layoutY="25.0" text="My Day - ToDo List" textFill="WHITE">
@@ -22,14 +22,16 @@
        <ListView fx:id="listTask" layoutX="14.0" layoutY="72.0" prefHeight="244.0" prefWidth="262.0" />
 
        <TextField fx:id="txtEnterTask" layoutX="14.0" layoutY="331.0" prefHeight="35.0" prefWidth="262.0" promptText="Enter your task" />
-      <Button layoutX="211.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnAddTaskOnClick" text="Add Task" />
-      <TableView fx:id="tblTasks" layoutX="306.0" layoutY="20.0" prefHeight="386.0" prefWidth="402.0">
+      <Button layoutX="211.0" layoutY="452.0" mnemonicParsing="false" onAction="#btnAddTaskOnClick" text="Add Task" />
+      <TableView fx:id="tblTasks" layoutX="306.0" layoutY="20.0" prefHeight="386.0" prefWidth="506.0">
         <columns>
           <TableColumn fx:id="colCompletedTasks" prefWidth="292.7999267578125" text="COMPLETED TASKS" />
             <TableColumn fx:id="colDate" prefWidth="107.199951171875" text="DATE" />
+            <TableColumn fx:id="colTime" prefWidth="107.199951171875" text="TIME" />
         </columns>
       </TableView>
-      <Button layoutX="657.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnReloadOnAction" text="Reload" />
-      <DatePicker fx:id="txtDate" layoutX="44.0" layoutY="379.0" prefHeight="26.0" prefWidth="231.0" promptText="Enter task date" />
+      <Button layoutX="759.0" layoutY="452.0" mnemonicParsing="false" onAction="#btnReloadOnAction" text="Reload" />
+      <DatePicker fx:id="txtDate" layoutX="29.0" layoutY="379.0" prefHeight="26.0" prefWidth="231.0" promptText="Enter task date" />
+      <TextField fx:id="txtTime" layoutX="100.0" layoutY="416.0" prefHeight="26.0" prefWidth="89.0" promptText="Time (HH:MM)" />
    </children>
 </AnchorPane>
