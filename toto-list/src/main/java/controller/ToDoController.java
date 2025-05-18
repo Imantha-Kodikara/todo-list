@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.ToDoModel;
 
+import java.sql.*;
+
 public class ToDoController {
 
     @FXML
@@ -38,6 +40,15 @@ public class ToDoController {
         CheckBox checkBox = new CheckBox(task.getTaskDescription()+" "+task.getDate());
         taskList.add(checkBox);
         listTask.setItems(taskList);
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ to_do_list", "root", "1234");
+            PreparedStatement pstm = connection.prepareStatement("INSERT INTO task VALUES(?,?)");
+            pstm.setString(1, txtEnterTask.getText());
+            pstm.setDate(2, Date.valueOf(txtDate.getValue()));
+            pstm.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         txtEnterTask.clear();
     }
